@@ -193,8 +193,8 @@ public class ResultActivity extends AppCompatActivity {
         public DownloadTask(Bundle extras) {
             this.gender = extras.getString("gender");
             this.sensibility = extras.getInt("sensibility");
-            //this.activity = extras.getInt("activity");
-            //this.altitude = extras.getInt("altitude");
+            this.activity = extras.getInt("activity");
+            this.altitude = extras.getInt("altitude");
 
             System.out.println("gender: " + this.gender);
             System.out.println("sensibility: " + this.sensibility);

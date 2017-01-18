@@ -7,13 +7,16 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
@@ -37,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
     EditText text;
     SeekBar temp;
 
+    RadioButton clicked;
+    /*
+    RadioButton wandern;
+    RadioButton radfahren;
+    RadioButton drachensteigen;
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +63,21 @@ public class MainActivity extends AppCompatActivity {
         text = (EditText) findViewById(R.id.editText);
         temp = (SeekBar) findViewById(R.id.seekBar);
         main = (RelativeLayout) findViewById(R.id.activity_main);
+
+        /*
+        wandern = (RadioButton) findViewById(R.id.radioButton);
+        radfahren = (RadioButton) findViewById(R.id.radioButton2);
+        drachensteigen = (RadioButton) findViewById(R.id.radioButton3);
+        */
+
+        text.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.setFocusable(true);
+                v.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
 
         dress.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,18 +171,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void radioClick(View view){
+        view.setBackgroundColor(Color.parseColor("#F46652"));
+        final View tempor = view;
+        switch (radios.getCheckedRadioButtonId()) {
+            case R.id.radioButton:
+                activity = 1;
+                break;
+            case R.id.radioButton2:
+                activity = 2;
+                break;
+            case R.id.radioButton3:
+                activity = 3;
+                break;
+            default:
+                System.out.println("ein Fehler");
+                break;
+        }
+
+
+
+
+
+
         LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = layoutInflater.inflate(R.layout.popup, null);
         final PopupWindow popupWindow = new PopupWindow(
                 popupView,
                 ActionBar.LayoutParams.WRAP_CONTENT,
-                ActionBar.LayoutParams.WRAP_CONTENT);
+                ActionBar.LayoutParams.WRAP_CONTENT, true);
 
-        view.setBackgroundColor(Color.parseColor("#F46652"));
-        final View tempor = view;
+        popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
 
-        activity = radios.getCheckedRadioButtonId();
-
+        popupWindow.showAtLocation(main, Gravity.CENTER,0,0);
 
         Button k3 = (Button)popupView.findViewById(R.id.k3);
         Button k2 = (Button)popupView.findViewById(R.id.k2);
@@ -169,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
         k3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 meter = 3;
                 popupWindow.dismiss();
                 tempor.setBackgroundColor(Color.parseColor("#008955"));
@@ -203,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        popupWindow.showAsDropDown(main);
+
     }
 
 

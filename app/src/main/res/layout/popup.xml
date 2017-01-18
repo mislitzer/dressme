@@ -5,15 +5,10 @@
     android:weightSum="1">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:orientation="vertical"
-        android:layout_marginLeft="34dp"
-        android:layout_marginRight="34dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginTop="70dp"
         android:background="@drawable/background_popup"
-        android:layout_weight="0.07"
         android:weightSum="1">
 
 
@@ -42,9 +37,8 @@
         <Button
             android:id="@+id/k0"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:layout_weight="0.21" />
-        " />
     </LinearLayout>
 </LinearLayout>

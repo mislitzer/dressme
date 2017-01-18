@@ -58,7 +58,7 @@ public class ResultActivity extends AppCompatActivity {
         //Adam
         TextView state = (TextView) findViewById(R.id.state);
         state.setTypeface(adam);
-        state.setTextSize(17);
+        state.setTextSize(14);
 
         TextView temperature = (TextView) findViewById(R.id.temperature);
         temperature.setTypeface(adam);

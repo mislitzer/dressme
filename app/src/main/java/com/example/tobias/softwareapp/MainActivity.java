@@ -1,8 +1,10 @@
 package com.example.tobias.softwareapp;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.location.Location;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,8 +25,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     String geschlecht;
@@ -116,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 maennlich.setBackgroundColor(Color.parseColor("#C4F3DF"));
             }
         });
-
 
     }
 
@@ -249,7 +252,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
 }

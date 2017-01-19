@@ -357,12 +357,14 @@ public class ResultActivity extends AppCompatActivity {
 
             if (condition == "n") {
                 wicon.setText(" Niederschlag");
+                wicon.setTextSize(13);
             }
             else if (condition == "h") {
                 wicon.setText(" Heiter");
             }
             else if (condition == "s") {
                 wicon.setText(" Sonnenschein");
+                wicon.setTextSize(13);
             }
 
             int conditionDeflator;

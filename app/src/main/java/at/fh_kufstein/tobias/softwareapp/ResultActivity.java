@@ -1,31 +1,34 @@
-package com.example.tobias.softwareapp;
+package at.fh_kufstein.tobias.softwareapp;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+        import android.graphics.Bitmap;
+        import android.graphics.BitmapFactory;
+        import android.graphics.Typeface;
+        import android.graphics.drawable.Drawable;
+        import android.os.AsyncTask;
+        import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.ImageView;
+        import android.widget.TextView;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+        import at.fh_kufstein.tobias.softwareapp.R;
+
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        import org.json.JSONObject;
+
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.InputStreamReader;
+        import java.io.Reader;
+        import java.io.UnsupportedEncodingException;
+        import java.net.HttpURLConnection;
+        import java.net.MalformedURLException;
+        import java.net.URL;
+        import java.text.SimpleDateFormat;
+        import java.util.Calendar;
 
 public class ResultActivity extends AppCompatActivity {
 
